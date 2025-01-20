@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ingresar Envio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Nombre Cliente</ion-label>
+    <ion-input type="text" [(ngModel)]="model.NOMBRE_CLIENTE"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Nombre Producto</ion-label>
+    <ion-input type="text" [(ngModel)]="model.NOMBRE_PRODUCTO"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Direccion</ion-label>
+    <ion-input type="text" [(ngModel)]="model.DIRECCION"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Cantidad</ion-label>
+    <ion-input type="text" [(ngModel)]="model.CANTIDAD"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="agregarEnvio()" >Ingresar</ion-button>
+
+  
+</ion-content>

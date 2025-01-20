@@ -9,9 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ProductoComponent } from './producto/producto.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { EnvioComponent } from './envio/envio.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductoComponent, ClienteComponent],
+  declarations: [AppComponent, ProductoComponent, ClienteComponent, EnvioComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

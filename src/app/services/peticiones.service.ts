@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Producto } from '../models/producto.model';
 import { Cliente } from '../models/cliente.model';
+import { Envio } from '../models/envio.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,13 @@ export class PeticionesService {
 
   getCliente(): Observable<any>{
     return this._http.get(this.url+'api-retailoff/cliente/getcliente');
+  }
+
+  addEnvio(envio: Envio): Observable<Envio>{
+    return this._http.post<Envio>(this.url+'api-retailoff/envio/addenvio', envio);
+  }
+
+  getEnvio(): Observable<any>{
+    return this._http.get(this.url+'api-retailoff/envio/getenvio');
   }
 }

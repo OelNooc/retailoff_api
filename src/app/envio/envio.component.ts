@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { PeticionesService } from '../services/peticiones.service';
-import { Cliente } from '../models/cliente.model';
+import { Envio } from '../models/envio.model';
 import { AlertController } from '@ionic/angular';
 
 import { JsonPipe } from '@angular/common';
 import { NgModel } from '@angular/forms';
 
 @Component({
-  selector: 'app-cliente',
-  templateUrl: './cliente.component.html',
-  styleUrls: ['./cliente.component.scss'],
+  selector: 'app-envio',
+  templateUrl: './envio.component.html',
+  styleUrls: ['./envio.component.scss'],
 })
-export class ClienteComponent  implements OnInit {
+export class EnvioComponent  implements OnInit {
 
-  model: Cliente = { NOMBRE_CLIENTE: '', ID_CLIENTE: this.generate(), EMAIL: '' }
-  public client: any;
+  model: Envio = { ID_ENVIO: this.generate(), ID_PRODUCTO: this.generate(), NOMBRE_PRODUCTO: '', NOMBRE_CLIENTE: '', DIRECCION: '', CANTIDAD: 0 }
+  public envio: any;
 
   constructor(private _peticionesService: PeticionesService,
     public alert: AlertController
   ) { }
 
   ngOnInit() {
-    this._peticionesService.getCliente().subscribe(
+    this._peticionesService.getEnvio().subscribe(
       result => {
         console.log(result);
-        this.client = result;
+        this.envio = result;
         return result;
       },
       error => {
@@ -33,16 +33,16 @@ export class ClienteComponent  implements OnInit {
     );
   }
 
-  agregarCliente() {
+  agregarEnvio() {
     console.log(this.model);
 
-    this._peticionesService.addCliente(this.model).subscribe(
-      (response: Cliente) => {
+    this._peticionesService.addEnvio(this.model).subscribe(
+      (response: Envio) => {
         console.log(response)
         if (this.model.NOMBRE_CLIENTE == "") {
           this.showAlert("Error", "no pueden quedar campos vacios")
         } else {
-          this.showAlert("Cliente Agregado", this.model.NOMBRE_CLIENTE)
+          this.showAlert("Envio Agregado", this.model.DIRECCION)
         }
       }
     );
