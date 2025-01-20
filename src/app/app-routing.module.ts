@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ProductoComponent } from './producto/producto.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,9 @@ const routes: Routes = [
   {
     path: 'pruducto', component: ProductoComponent
   },
+  {
+    path: 'cliente', component: ClienteComponent
+  }
 ];
 
 @NgModule({

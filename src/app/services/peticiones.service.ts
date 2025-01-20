@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Producto } from '../models/producto.model';
+import { Cliente } from '../models/cliente.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,13 @@ export class PeticionesService {
 
   getProducto(): Observable<any>{
     return this._http.get(this.url+'api-retailoff/producto/getproducto');
+  }
+
+  addCliente(cliente: Cliente): Observable<Cliente>{
+    return this._http.post<Cliente>(this.url+'api-retailoff/cliente/addcliente', cliente)
+  }
+
+  getCliente(): Observable<any>{
+    return this._http.get(this.url+'api-retailoff/cliente/getcliente');
   }
 }
