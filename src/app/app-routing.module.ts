@@ -15,7 +15,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'pruducto', component: ProductoComponent
+    path: 'producto', component: ProductoComponent
   },
   {
     path: 'cliente', component: ClienteComponent

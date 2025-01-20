@@ -10,6 +10,7 @@ import { NgModel } from '@angular/forms';
   selector: 'app-envio',
   templateUrl: './envio.component.html',
   styleUrls: ['./envio.component.scss'],
+  standalone: false
 })
 export class EnvioComponent  implements OnInit {
 

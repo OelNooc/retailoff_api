@@ -10,6 +10,7 @@ import { NgModel } from '@angular/forms';
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
   styleUrls: ['./cliente.component.scss'],
+  standalone: false
 })
 export class ClienteComponent  implements OnInit {
 

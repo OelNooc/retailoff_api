@@ -10,6 +10,7 @@ import { NgModel } from '@angular/forms';
   selector: 'app-producto',
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.scss'],
+  standalone: false
 })
 export class ProductoComponent  implements OnInit {
 
